@@ -1,0 +1,128 @@
+:root {
+  --navy-1: #161F31;
+  --prim-1: #191d2b;
+  --grey-1: #dbe1e8;
+  --grey-2: #0A2647;
+  --grey-3: #6c7983;
+  --grey-4: #8A91AD;
+  --grey-5: #041C32;
+  --gold-1: #ecb365;
+  --whit-1: #ffffff;
+  --hue: #205295;
+  --font-main: "Poppins", sans-serif;
+  --font-pri: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+  --font-sec: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  --font-opt: "Noto Sans", sans-serif;
+  --font-default: 1rem;
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, .3);
+  --transition-1: all .4s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: var(--navy-1);
+  font-family: var(--font-main);
+  color: var(--whit-1);
+  font-size: var(--font-default);
+  transition: var(--transition-1);
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+header {
+  height: 100vh;
+  color: var(--whit-1);
+  overflow: hidden;
+}
+
+section {
+  min-height: 100vh;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 3rem 18rem;
+}
+
+.container {
+  transform: translateY(-100%);
+  transition: var(--transition-1);
+  background-color: var(--prim-1);
+}
+
+.item1 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: #284253;
+}
+
+.item2 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: #352149;
+}
+
+.item3 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: #357652;
+}
+
+.item4 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: #757339;
+}
+
+.item5 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.controls {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+.controls .active-btn {
+  background-color: var(--gold-1) !important;
+  transition: var(--transition-1);
+}
+.controls .active-btn i {
+  color: var(--grey-5) !important;
+}
+.controls .control {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--grey-2);
+  width: 60px;
+  height: 60px;
+  border-radius: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.7rem 0;
+  box-shadow: var(--box-shadow-1);
+}
+.controls .control i {
+  font-size: 1.2rem;
+  color: var(--grey-3);
+  pointer-events: none;
+}/*# sourceMappingURL=style.css.map */
