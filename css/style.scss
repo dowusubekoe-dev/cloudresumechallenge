@@ -8,14 +8,13 @@
     --grey-5: #041C32;
     --gold-1: #ecb365;
     --whit-1: #ffffff;
-    --hue: #205295;
-    --font-main: 'Poppins', sans-serif;
+    --blue-1: #205295;
+    --font-main: "Poppins", sans-serif;
     --font-pri: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
     --font-sec: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
     --font-opt: "Noto Sans", sans-serif;
     --font-default: 1rem;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, .3);
-    --transition-1: all .4s ease-in-out;
 }
 
 * {
@@ -30,7 +29,7 @@ body {
     font-family: var(--font-main);
     color: var(--whit-1);
     font-size: var(--font-default);
-    transition: var(--transition-1);
+    transition: all .4s ease-in-out;
 }
 
 a {
@@ -44,6 +43,7 @@ header {
     height: 100vh;
     color: var(--whit-1);
     overflow: hidden;
+    padding: 0 !important;
 }
 
 section {
@@ -56,8 +56,9 @@ section {
 }
 
 .container {
-    transform: translateY(-100%);
-    transition: var(--transition-1);
+    display: none;
+    transform: translateY(-100%) scale(0);
+    transition: all .4s ease-in-out;
     background-color: var(--prim-1);
 }
 
@@ -88,6 +89,23 @@ section {
 .item5 {
     display: none;
     transform: translateY(0) scale(1);
+    background-color: #b5b012;
+}
+
+.active {
+    display: block;
+    animation: appear 1s ease-in-out;
+    transform: translateY(0) scaleY(1);
+
+    @keyframes appear {
+        0% {
+            transform: translateY(-100%) scaleY(0);
+        }
+
+        100% {
+            transform: translateY(0) scaleY(1);
+        }
+    }
 }
 
 // controls
@@ -104,7 +122,7 @@ section {
 
     .active-btn {
         background-color: var(--gold-1) !important;
-        transition: var(--transition-1);
+        transition: all .4s ease-in-out;
 
         i {
             color: var(--grey-5) !important;
