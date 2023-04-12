@@ -4,18 +4,18 @@
   --grey-1: #dbe1e8;
   --grey-2: #0A2647;
   --grey-3: #6c7983;
+  --lsla-1: #ccd6f6;
   --grey-4: #8A91AD;
   --grey-5: #041C32;
   --gold-1: #ecb365;
   --whit-1: #ffffff;
-  --hue: #205295;
+  --blue-1: #205295;
   --font-main: "Poppins", sans-serif;
   --font-pri: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
   --font-sec: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   --font-opt: "Noto Sans", sans-serif;
   --font-default: 1rem;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, .3);
-  --transition-1: all .4s ease-in-out;
 }
 
 * {
@@ -26,11 +26,11 @@
 }
 
 body {
-  background-color: var(--navy-1);
+  background-color: var(--prim-1);
   font-family: var(--font-main);
   color: var(--whit-1);
   font-size: var(--font-default);
-  transition: var(--transition-1);
+  transition: all 0.4s ease-in-out;
 }
 
 a {
@@ -44,6 +44,7 @@ header {
   height: 100vh;
   color: var(--whit-1);
   overflow: hidden;
+  padding: 0 !important;
 }
 
 section {
@@ -56,38 +57,47 @@ section {
 }
 
 .container {
-  transform: translateY(-100%);
-  transition: var(--transition-1);
+  transform: translateY(-100%) scale(0);
+  transition: all 0.4s ease-in-out;
   background-color: var(--prim-1);
 }
 
 .item1 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #284253;
 }
 
 .item2 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #352149;
 }
 
 .item3 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #357652;
 }
 
 .item4 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #757339;
 }
 
 .item5 {
   display: none;
   transform: translateY(0) scale(1);
+}
+
+.active {
+  display: block;
+  animation: scalAnim 1s ease-in-out;
+}
+@keyframes scalAnim {
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
 }
 
 .controls {
@@ -103,7 +113,7 @@ section {
 }
 .controls .active-btn {
   background-color: var(--gold-1) !important;
-  transition: var(--transition-1);
+  transition: all 0.4s ease-in-out;
 }
 .controls .active-btn i {
   color: var(--grey-5) !important;
@@ -112,9 +122,9 @@ section {
   padding: 1rem;
   cursor: pointer;
   background-color: var(--grey-2);
-  width: 60px;
-  height: 60px;
-  border-radius: 60%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,4 +135,66 @@ section {
   font-size: 1.2rem;
   color: var(--grey-3);
   pointer-events: none;
+}
+
+/*Hero section*/
+.hero-content {
+  height: 100%;
+  min-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 18rem;
+}
+.hero-content .name {
+  font-size: 16px;
+}
+.hero-content .name span {
+  color: var(--gold-1);
+}
+.hero-content .name .full-name {
+  font-size: 80px;
+  font-family: var(--font-pri);
+  color: var(--lsla-1);
+}
+.hero-content .name .cta {
+  font-size: 40px;
+  font-family: var(--font-pri);
+  padding: 0.5rem 0 0.9rem 0;
+  color: var(--grey-4);
+  width: 650px;
+}
+.hero-content .name .brief-info {
+  width: 650px;
+  margin: 1.5rem 0;
+  color: var(--grey-3);
+}
+
+.btn-con {
+  display: flex;
+  align-self: flex-start;
+}
+
+.main-btn {
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--gold-1);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.main-btn .btn-text {
+  padding: 0 2rem;
+}
+.main-btn .btn-icon {
+  color: var(--gold-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.6rem;
 }/*# sourceMappingURL=style.css.map */
